@@ -1,4 +1,4 @@
-JewishEcards::Application.routes.draw do
+Gochieve::Application.routes.draw do
 
   
 

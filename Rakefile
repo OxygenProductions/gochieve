@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-JewishEcards::Application.load_tasks
+Gochieve::Application.load_tasks
