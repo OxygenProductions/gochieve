@@ -35,3 +35,5 @@ gem 'acts-as-taggable-on'
 gem "rmagick"
 gem "carrierwave"
 gem "activeadmin"
+gem 'acts_as_votable'
+gem 'impressionist'
