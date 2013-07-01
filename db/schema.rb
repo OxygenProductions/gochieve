@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701181538) do
+ActiveRecord::Schema.define(:version => 20130701182603) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,52 +46,20 @@ ActiveRecord::Schema.define(:version => 20130701181538) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "authors", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.text     "biography"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "gcs", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.string   "location"
+    t.string   "category"
+    t.date     "deadline"
+    t.integer  "ref"
+    t.integer  "achieve_method"
+    t.integer  "access_level"
+    t.integer  "owner"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
-
-  create_table "cards", :force => true do |t|
-    t.string   "name"
-    t.boolean  "is_new"
-    t.string   "card_type"
-    t.integer  "envelope_id"
-    t.integer  "author_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "cards", ["author_id"], :name => "index_cards_on_author_id"
-
-  create_table "envelopes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "fields", :force => true do |t|
-    t.string   "name"
-    t.string   "field_type"
-    t.string   "region"
-    t.boolean  "editable"
-    t.string   "font_family"
-    t.integer  "font_size"
-    t.integer  "letter_spacing"
-    t.integer  "word_spacing"
-    t.integer  "line_height"
-    t.boolean  "has_text_shadow"
-    t.string   "text_shadow"
-    t.string   "text_align"
-    t.string   "text"
-    t.integer  "card_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "fields", ["card_id"], :name => "index_fields_on_card_id"
 
   create_table "images", :force => true do |t|
     t.string   "image"
